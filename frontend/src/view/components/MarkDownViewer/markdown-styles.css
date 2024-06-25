@@ -1,0 +1,51 @@
+/* markdown */
+.custom-h1 {
+  color: #2c3e50;
+  font-size: 2.2em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.custom-h2 {
+  color: #34495e;
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 0.75em;
+}
+
+.custom-paragraph {
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
+.custom-paragraph a {
+  color: #007bff;
+  text-decoration: none;
+  padding-bottom: 2px;
+}
+
+.custom-paragraph a:hover {
+  text-decoration: underline;
+}
+
+.custom-code {
+  background-color: #f4f4f4;
+  padding: 0.2em;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+  margin-bottom: 1em;
+}
+
+.custom-list-item {
+  margin-bottom: 0.5em;
+}
+
+.custom-list {
+  margin-bottom: 1em;
+}
+
+.custom-ordered-list {
+  margin-left: 1.5em;
+  list-style-type: decimal;
+  margin-bottom: 1em;
+}

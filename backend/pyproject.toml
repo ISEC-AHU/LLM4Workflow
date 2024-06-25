@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "LLM4Workflow-backend"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [
+    { include = "app" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+uvicorn = "^0.23.2"
+langserve = {extras = ["server"], version = ">=0.0.30"}
+pydantic = "<2"
+langchain-openai = "^0.1.3"
+python-dotenv = "^1.0.1"
+langchain-core = "^0.1.44"
+langchain = "^0.1.16"
+chromadb = "^0.5.0"
+rank-bm25 = "^0.2.2"
+psycopg2 = "^2.9.9"
+python-multipart = "^0.0.9"
+pip = "^24.0"
+install = "^1.3.5"
+psycopg-binary = "^3.1.19"
+
+
+[tool.poetry.group.dev.dependencies]
+langchain-cli = ">=0.0.15"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,151 @@
+[
+  {
+    "name": "WSDL Web Service",
+    "describe": "The WSDL Web Service actor executes web services defined by WSDLs.",
+    "parameters": {
+      "method": "The web service method name to run.",
+      "inputParameters": "The input parameters for the web service method.",
+      "wsdl": "The WSDL URL."
+    },
+    "output": {
+      "result": "The result of the web service method.",
+      "error": "The error message if the web service method failed."
+    }
+  },
+  {
+    "name": "Display",
+    "describe": "The Display actor reads tokens of any type via its input parameter, and displays each token on a separate line in a text display window.If the input is a string token, then the actor strips the surrounding quotation marks before displaying the value.",
+    "parameters": {
+      "input": "The input data accepts tokens of any type."
+    },
+    "output": ""
+  },
+  {
+    "name": "StringToXML",
+    "describe": "The StringToXML actor converts a string token to an XML token.XML is a markup language for files containing structured information (content as well as its context, e.g., whether a value is a \"header\" or \"footnote\").",
+    "parameters": {
+      "input": "A string to be transformed into an XML token."
+    },
+    "output": "Output the XML token (i.e., encapsulated XML data that can be sent to other apis)."
+  },
+  {
+    "name": "XPathProcessor",
+    "describe": "The XPathProcessor actor is used to extract a specified tag element from an XML file. The api outputs an array of selected XML tokens.The api uses an XPath string, which provides an XML addressing syntax. XML is a markup language for files containing structured information (content as well as its context, e.g., a value and the fact that it is a \"header\" or a \"footnote\").",
+    "parameters": {
+      "xpath": "xpath accepts an xpath string used to identify XML elements (e.g., //tag_name)",
+      "input": "An input that accepts an XML token."
+    },
+    "output": "Output an array of selected XML tokens."
+  },
+  {
+    "name": "Expression",
+    "describe": "The Expression actor evaluates a specified expression (e.g., an addition or multiplication operation), which may reference the values of user-specified input, the current time, or the api's iteration count. The api outputs the value of the evaluated expression.Expressions are specified in the Ptolemy expression language via the expression parameter.Note: the Expression api can be used instead of many of the arithmetic apis, such as AddSubtract, MultiplyDivide, and TrigFunction. However, those apis will be usually be more efficient, and sometimes more convenient to use.",
+    "parameters": {
+      "expression": "expression is specified in the Ptolemy expression language."
+    },
+    "output": "Output the value of the evaluated expression. The api automatically determines the type based on the type of the input."
+  },
+  {
+    "name": "XSLTProcessor",
+    "describe": "The XSLTProcessor actor transforms an XML stream into an HTML stream that can be viewed using a BrowserUI api. The api performs the transformation using an XSLT file, which specifies how the document should be transformed. The api receives an XML stream via its input. Specify an XSLT file in the XSLTFilePath parameter. The api outputs the transformed file as a string that can be displayed by the BrowserUI api.",
+    "parameters": {
+      "XSLT File Path": "The file path to the XSLT file used to transform the XML input into HTML.",
+      "XML input": "An input accepts an XML input stream, as a string."
+    },
+    "output": "Output an HTML stream, as a string."
+  },
+  {
+    "name": "StringConstant",
+    "describe": "The StringConstant actor outputs a string specified via the value parameter.",
+    "parameters": {
+      "value": "The value produced by the api. Specified strings do not require enclosing quotes. (To include a '$' sign in the string, enter '$$'.)"
+    },
+    "output": "a string constant specified by the value parameter."
+  },
+  {
+    "name": "Absolute Value",
+    "describe": "The AbsoluteValue actor reads a scalar value (e.g., an integer, double, etc) and outputs its absolute value. The output will have the same type as the input, unless the input is a complex number. If the input is a complex number, the output type is a double with the same magnitude as the input number.",
+    "parameters": {
+      "value": "An input that accepts a scalar value (e.g., an integer, double, complex, etc.)"
+    },
+    "output": "Output the absolute value of the input."
+  },
+  {
+    "name": "SummaryStatistics",
+    "describe": "The SummaryStatistics actor accepts an array of values to calculate their mean, standard deviation, and variance. The api outputs both a graphical and textual representation of the summary analysis.",
+    "parameters": {
+      "value": "An input that accepts an array of values."
+    },
+    "output": {
+      "xmean": "Output the mean of the input.",
+      "xstd": "Output the standard deviation of the input.",
+      "xvar": "Output the variance of the input."
+    }
+  },
+  {
+    "name": "ImageJ",
+    "describe": "The ImageJ actor reads an image file name and opens and displays the image along with a toolbar of image-processing options, which can be used to process the image. The actor uses the ImageJ application to open and work with images. ImageJ can be used to display and process a wide variety of images (tiffs, gifs, jpegs, etc.)",
+    "parameters": {
+      "gridFileName": "An input that accepts a grid file."
+    }
+  },
+  {
+    "name": "GridReset",
+    "describe": "The GridReset actor transforms a specified range of values in a grid to some other value without changing the cell size or extent of the grid. The actor reads an input grid file and replaces a range of values with a new value specified in the actor's parameters. The actor outputs a new grid file. If no new value is specified in the actor parameters, the actor will transform the existing value based on the transformation parameters: it will multiply the existing value by the value of the multiplicationFactor parameter and add the value of the additionParameter.",
+    "parameters": {
+      "gridFileName": "An input that accepts a grid file.",
+      "multiplicationFactor": "The factor to multiply the existing value by if the newValue parameter is left empty.",
+      "additionParameter": "The value to add to the existing value if the newValue parameter is left empty.",
+      "newvalParameter": "The new value used to replace the value of cells that fall in the specified replacement range (i.e., between the minimum and maximum values). If no value is specified, the actor will transform the existing value based on the multiplicationFactor and the additionParameter."
+    },
+    "output": "Output the new grid file."
+  },
+  {
+    "name": "MergeGrids",
+    "describe": "The MergeGrids actor reads the names of two geospatial image files, merges the files according to a specified merge operation, and outputs the name of the merged file. ",
+    "parameters": {
+      "grid1FileName": "The first raster file to be merged (in ESRI ASCII Grid format)",
+      "grid2FileName": "The second grid file to be merged (in ESRI ASCII Grid format).",
+      "mergedGridFileName": "The file name to give the output file."
+    },
+    "output": "Output the file name of the resulting merged file"
+  },
+  {
+    "name": "GridRescaler",
+    "describe": "The Grid Rescaler actor uses an interpolation algorithm (either 'Nearest Neighbor' or 'Inverse Distance') to increase the resolution of the input file. The actor can also use its numrows and numcols parameters to reduce or 'clip' the extent of the grid",
+    "parameters": {
+      "cellsize": "A double token representing the cell size for the raster (assumed square).",
+      "xllcorner": "A double token representing the x-value (usually a longitude) of the lower-left corner of the raster.",
+      "yllcorner": "A double token representing the y-value (usually a latitude) of the lower-left corner of the raster.",
+      "algorithm": "'Nearest Neighbor' or 'Inverse Distance Weighted'.",
+      "gridFileName": "The name of the the ASCII grid file or files to be converted.",
+      "numrows": "An integer representing the number of rows for the raster.",
+      "numcols": "An integer representing the number of columns for the raster."
+    },
+    "output": "Output the name of the converted ASCII grid files."
+  },
+  {
+    "name": "ClimateChangeFileProcessor",
+    "describe": "The ClimateChangeFileProcessor actor converts climate change data from the Intergovernmental Panel on Climate Change (IPCC) into a more generalized raster format that can be read by other actors. The actor outputs the name of the converted file. The ClimateChangeFileProcessor actor is very similar to the ClimateFileProcessor actor, except that it is designed to work with predicted climate change datasets, which differ from historical (1961-1990) IPCC datasets in formatting. The ClimateChangeFileProcessor actor converts climate change data from the Intergovernmental Panel on Climate Change (IPCC) into a more generalized raster format that can be read by other actors. The actor outputs the name of the converted file. The ClimateChangeFileProcessor actor is very similar to the ClimateFileProcessor actor, except that it is designed to work with predicted climate change datasets, which differ from historical (1961-1990) IPCC datasets in formatting. For more information about IPCC, see http://www.ipcc.ch/.\nThe ClimateChangeFileProcessor actor receives the name of an IPCC climate change data file via its input port and saves the reformatted file in the same directory. Specify another location using the baseOutputFileName parameter.\nCustomize the type of climate change data to output (minimum, maximum, or average climate change values) with the outputType parameter. Specify the output period for the data (the season or year) with the outputPeriod parameter.",
+    "parameters": {
+      "ClimateDatasetFileName": "An input port that accepts the file name of the source IPCC climate change dataset. IPCC data can be located via the EcoGrid."
+    },
+    "output": "Output the file name of the raster file created by the actor. The actor creates this file from the IPCC source data, based on the time and type values specified by the user."
+  },
+  {
+    "name": "ClimateFileProcessor",
+    "describe": "The ClimateFileProcessor actor converts historical climate data from the Intergovernmental Panel on Climate Change (IPCC) into a more generalized raster format that can be read by other actors. The actor outputs the name of the converted file. The ClimateFileProcessor actor is very similar to the ClimateChangeFileProcessor actor, except that it is designed to work with historical climate datasets rather than climate change datasets, which have different formats. ",
+    "parameters": {
+      "ClimateDatasetFileName": "An input port that accepts the file name of the source IPCC climate dataset. IPCC data can be located via the EcoGrid."
+    },
+    "output": "Output the file name of the raster file created by the actor. The actor creates this file from the IPCC source data, based on the time and type values specified by the user."
+  },
+  {
+    "name": "EML2Dataset",
+    "describe": "The EML2Dataset actor provides access to a wide variety of data packages that have been described using EML (Ecological Metadata Language). The actor accesses an EML dataset and handles the mechanical issues involved in parsing metadata, downloading the dataset (if applicable), and emitting data to downstream actors. Each data package contains an EML metadata description and one or more data entities (e.g., data tables, spatial raster images, spatial vector images).",
+    "parameters": {
+      "EML2DatasetFileName": "An input that accepts the file name of the source IPCC climate change dataset. IPCC data can be located via the EcoGrid."
+    },
+    "output": "Output the climate dataset in the EML description."
+  }
+]
