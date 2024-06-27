@@ -19,8 +19,11 @@ LLM4Workflow is an LLM-based automated workflow model generation tool.
 LLM4Workflow accepts the workflow description as input,  the process of  LLM4Workflow comprises four main stages:
 
 **(1) One-time API Knowledge Base Preparation;**
+
 **(2) Task Extraction and Rewriting;**
+
 **(3) API Retrieval;**
+
 **(4) Workflow Model Generation;**
 
 Finally, LLM4Workflow outputs an XML format workflow model which is ready to be executed by real-world workflow systems. As the real-world workflow system, we select EdgeWorkflow. EdgeWorkflow is a real-world platform for edge computing-based workflow applications. It supports various workflow structures and different evaluation index metrics such as time, energy, and cost.
@@ -37,7 +40,7 @@ We use LLM4Workflow to generate the Climate Data Merge-Viz workflow model and im
 
 ## 🎥 Demonstration
 
-For more details, you can watch the [demo video]().
+For more details, you can watch the [demo video](https://www.youtube.com/watch?v=XRQ0saKkuxY).
 
 ## 🛠️ Getting Started
 

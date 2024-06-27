@@ -14,7 +14,7 @@ LLM4Workflow is an LLM-based automated workflow model generation tool.
 
 ## 🎥 Demonstration
 
-For more details, you can watch the [demo video]().
+For more details, you can watch the [demo video](https://www.youtube.com/watch?v=XRQ0saKkuxY).
 
 ## 🛠️ Getting Started
 
