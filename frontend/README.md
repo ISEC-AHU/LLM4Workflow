@@ -1,30 +1,26 @@
 # LLM4Workflow
 
-LLM4Workflow is an innovative retrieval-augmented workflow generation tool driven by LLM.
+LLM4Workflow is an LLM-based automated workflow model generation tool.
 
 ## ✨ Features
 
-🤖  **Automatic Model Generation**: automatically generate executable workflow models from natural language-based workflow descriptions.
+🤖  **Automated Model Generation**: automatically generates executable workflow models from natural language-based workflow descriptions.
 
-🔍 **Automatic Knowledge Embedding**: support users in importing a collection of process-related APIs with one click. LLM4Workflow automatically embeds these APIs into the LLM’s contextual environment.
+🔍 **Automated Knowledge Embedding**: besides public APIs, users can also import customer APIs, and LLM4Workflow can automatically embed the knowledge of these APIs into LLM’s contextual environment.
 
-🔄  **Automatic Process Formation**: utilize LLM chains to decompose complex tasks into multiple sub-tasks, and efficiently complete the parsing and formation process.
+🔄  **Automated Process Refinement**: utilizes LLM chains to decompose complex tasks into multiple subtasks, and efficiently complete the parsing and refinement process.
 
-📊 **Automatic Process Evaluation**: enable users to deploy workflow models to real-world workflow systems such as EdgeWorkflow with one click so that users can easily monitor and evaluate the workflow performance.
+📊 **Automated Process Evaluation**: users can deploy workflow models to real-world workflow systems such as [EdgeWorkflow](https://github.com/ISEC-AHU/EdgeWorkflow) to evaluate the correctness and the performance of generated workflow models.
 
 ## 🎥 Demonstration
 
-For more details, you can watch the [demo video]() on YouTube.
+For more details, you can watch the [demo video]().
 
 ## 🛠️ Getting Started
 
 To run LLM4Workflow, follow these steps:
 
-1. Clone this repository:
-
-   ```sh
-   git clone https://github.com/ISEC-AHU/LLM4Workflow.git LLM4Workflow
-   ```
+1. Clone this repository:`git clone https://github.com/ISEC-AHU/LLM4Workflow.git LLM4Workflow`
 
 2. Navigate to the backend directory: `cd LLM4Workflow/backend`
 
